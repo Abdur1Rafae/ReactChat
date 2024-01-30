@@ -1,0 +1,53 @@
+.SingleChat{
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.SingleChat:hover{
+    background-color: #c0c0c0;
+}
+
+.SingleChat h5{
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.chat-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.chat-msg{
+    display: flex;
+    width: 250px;
+    justify-content: space-between;
+}
+
+.chat-msg span{
+    color: grey;
+    font-size: 12px;
+}
+
+.online-show{
+    background-color:aquamarine;
+    width: 20px;
+    height: 10px;
+    border-radius: 50%;
+    position: relative;
+    top: 40px;
+    left: -20px;
+}
+
+.offline-show{
+    background-color: white;
+    border: 1px solid grey;
+    width: 20px;
+    height: 10px;
+    border-radius: 50%;
+    position: relative;
+    top: 40px;
+    left: -20px;
+}

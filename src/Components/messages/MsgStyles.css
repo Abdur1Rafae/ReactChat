@@ -1,0 +1,36 @@
+.received-msg{
+    background-color: aquamarine;
+    padding: 10px 10px 5px 10px;
+    display: inline-block;
+    border-radius: 40px;
+    margin: 10px 0 0 10px;
+    max-width: 50%;
+}
+
+.sent-msg{
+    background-color: #f4f5f8;
+    padding: 10px 10px 5px 10px;
+    display: inline-block;
+    border-radius: 40px;
+    margin: 10px 10px 0 0;
+    max-width: 50%;
+}
+
+.time{
+    color: grey;
+    font-size: 10px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.sent{
+    display: block;
+    border-radius: 40px;
+    text-align: right;
+}
+
+.rcvd{
+    display: block;
+    border-radius: 40px;
+    text-align: left;
+}
