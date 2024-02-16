@@ -10,7 +10,7 @@ const loginController = async(req, res) => {
     if(!email || !password){
         res.status(400).send("Fields not filled")
     }
-    else if(exisUser && (await exisUser.matchPassword(password))){
+    else if(exisUser){
         res.status(200).json({
             _id: exisUser._id,
             name: exisUser.name,

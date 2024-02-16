@@ -27,6 +27,7 @@ const Login = (props) => {
         } catch(error) {
             if(error.response.status == 401){
                 setError("Invalid Credentials")
+                console.log(error)
             }
             else{
                 setError("Fill all fields")
