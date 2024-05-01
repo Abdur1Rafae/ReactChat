@@ -14,8 +14,14 @@ jobs:
       - name: Login to Docker Hub
         run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
-      - name: Build Docker image
+      - name: Build Frontend Docker image
         run: docker build -t "${{ secrets.DOCKERHUB_USERNAME }}/chatui:v3" .
 
-      - name: Push Docker image to Docker Hub
+      - name: Push Frontend Docker image to Docker Hub
         run: docker push "${{ secrets.DOCKERHUB_USERNAME }}/chatui:v3"
+
+      - name: Build Backend Docker image
+        run: docker build -t "${{ secrets.DOCKERHUB_USERNAME }}/chatback:v3" ./backend
+
+      - name: Push Frontend Docker image to Docker Hub
+        run: docker push "${{ secrets.DOCKERHUB_USERNAME }}/chatback:v3"
