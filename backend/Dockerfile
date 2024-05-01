@@ -1,8 +1,12 @@
-FROM node:18-alpine
+FROM node:alpine
+
+ENV MONGODB_URI=value
+
+ENV JWT_SECRET=value
 
 WORKDIR /app
 
-COPY package.json .
+COPY package.json package.json
 
 RUN npm install
 

@@ -25,3 +25,7 @@ yarn-error.log*
 /backend/.env
 node_modules
 demo.java
+app-secret.yaml
+.terraform.lock.hcl
+terraform.tfstate.backup
+terraform.tfstate

@@ -12,8 +12,9 @@ const UserLogin = async(data) => {
         data,
         config
     );
-
+    console.log(response)
     return response
+
 }
 
 const UserRegister = async(data)=> {

@@ -11,7 +11,7 @@ dotenv.config();
 const app = express();
 
 app.use(express.json())
-app.use(cors())
+app.use(cors("*"))
 const connectdb = async()=>{
     try{
         const connect = await mongoose.connect(process.env.MONGO_URI)
@@ -21,7 +21,7 @@ const connectdb = async()=>{
     }
 }
 connectdb()
-const server = app.listen(process.env.PORT_NUMBER, console.log("Server running on port 5000"));
+const server = app.listen(5000, console.log("Server running on port 5000"));
 
 app.use('/user',userRoutes)
 app.use('/msgs',messageRoutes)
@@ -29,7 +29,7 @@ app.use('/chats', chatRoutes)
 
 const io = require("socket.io")(server, {
     cors: {
-        origin: "",
+        origin: "*",
     },
     pingTimeout: 60000,
 })
