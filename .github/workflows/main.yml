@@ -26,15 +26,3 @@ jobs:
       - name: Push Frontend Docker image to Docker Hub
         run: docker push "${{ secrets.DOCKERHUB_USERNAME }}/chatback:v3"
 
-      - name: Build Frontend
-        working-directory: .
-        run: |
-          # Add commands to build the frontend project (replace with your build command)
-          npm install
-          npm run build
-
-      - name: Build Backend
-        working-directory: ./backend
-        run: |
-          npm install
-          npm run build
