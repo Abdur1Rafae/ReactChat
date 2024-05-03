@@ -48,7 +48,7 @@ pipeline {
                 script {
                     withCredentials([usernamePassword(credentialsId: 'dockercred', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                         docker.withRegistry('https://index.docker.io/v1/', 'dockercred') {
-                            docker.build("${FRONTEND_REPO}:${DOCKER_TAG}", './application')
+                            docker.build("${FRONTEND_REPO}:${DOCKER_TAG}", './')
                             docker.image("${FRONTEND_REPO}:${DOCKER_TAG}").push()
                         }
                     }
@@ -60,7 +60,7 @@ pipeline {
                 script {
                     withCredentials([usernamePassword(credentialsId: 'dockercred', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                         docker.withRegistry('https://index.docker.io/v1/', 'dockercred') {
-                            docker.build("${BACKEND_REPO}:${DOCKER_TAG}", './application')
+                            docker.build("${BACKEND_REPO}:${DOCKER_TAG}", './backend')
                             docker.image("${BACKEND_REPO}:${DOCKER_TAG}").push()
                         }
                     }
