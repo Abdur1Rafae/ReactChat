@@ -12,17 +12,17 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Login to Docker Hub
-        run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+        run: echo "S@mina@Docker" | docker login -u "abdurrafae" --password-stdin
 
       - name: Build Frontend Docker image
-        run: docker build -t "${{ secrets.DOCKERHUB_USERNAME }}/chatui:v3" .
+        run: docker build -t "abdurrafae/chatui:v3" .
 
       - name: Push Frontend Docker image to Docker Hub
-        run: docker push "${{ secrets.DOCKERHUB_USERNAME }}/chatui:v3"
+        run: docker push "abdurrafae/chatui:v3"
 
       - name: Build Backend Docker image
-        run: docker build -t "${{ secrets.DOCKERHUB_USERNAME }}/chatback:v3" ./backend
+        run: docker build -t "abdurrafae/chatback:v3" ./backend
 
       - name: Push Frontend Docker image to Docker Hub
-        run: docker push "${{ secrets.DOCKERHUB_USERNAME }}/chatback:v3"
+        run: docker push "abdurrafae/chatback:v3"
 
