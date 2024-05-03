@@ -73,7 +73,7 @@ pipeline {
                     kubeconfig(credentialsId: "${env.K8S_CREDENTIALS_ID}", serverUrl: "${env.K8S_SERVER_URL}") {
                         bat 'terraform init'
                         bat 'terraform plan'
-                        bat 'terraform apply'
+                        bat 'terraform apply -auto-approve'
                     }
                 }
             }
