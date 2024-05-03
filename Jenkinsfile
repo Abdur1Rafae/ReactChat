@@ -71,8 +71,8 @@ pipeline {
             steps {
                 script {
                     kubeconfig(credentialsId: "${env.K8S_CREDENTIALS_ID}", serverUrl: "${env.K8S_SERVER_URL}") {
-                        bat 'terrafrom plan'
-                        bat 'terrafrom apply'
+                        bat 'terraform plan'
+                        bat 'terraform apply'
                     }
                 }
             }
