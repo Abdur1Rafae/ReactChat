@@ -67,13 +67,15 @@ pipeline {
                 }
             }
         }
-        stage('SonarQube Scan') {
+        stage('OWASP Dependency-Check Vulnerabilities') {
             steps {
-                script {
-                    withSonarQubeEnv('SonarServer') {
-                        bat 'npm run'
-                    }
-                }
+                dependencyCheck additionalArguments: ''' 
+                            -o './'
+                            -s './'
+                            -f 'ALL' 
+                            --prettyPrint''', odcInstallation: 'DP_Check'
+                
+                dependencyCheckPublisher pattern: 'dependency-check-report.xml'
             }
         }
         stage('Deploy to Minikube') {
