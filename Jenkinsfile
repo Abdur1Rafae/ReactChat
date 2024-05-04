@@ -69,13 +69,7 @@ pipeline {
         }
         stage('OWASP Dependency-Check Vulnerabilities') {
             steps {
-                dependencyCheck additionalArguments: ''' 
-                            -o './'
-                            -s './'
-                            -f 'ALL' 
-                            --prettyPrint''', odcInstallation: 'DP_Check'
-                
-                dependencyCheckPublisher pattern: 'dependency-check-report.xml'
+                dependencyCheck additionalArguments: '--format HTML', odcInstallation: 'DP_Check'
             }
         }
         stage('Deploy to Minikube') {
