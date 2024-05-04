@@ -72,7 +72,7 @@ pipeline {
                 script {
                     withSonarQubeEnv('SonarServer') {
                         bat 'npm install sonar-scanner'
-                        bat 'sonar-scanner'
+                        bat 'npm run sonar-scanner'
                     }
                 }
             }
