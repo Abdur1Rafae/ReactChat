@@ -68,8 +68,10 @@ pipeline {
             }
         }
         stage('OWASP Dependency-Check Vulnerabilities') {
-            steps {
-                dependencyCheck additionalArguments: '--format HTML', odcInstallation: 'DP_Check'
+             steps {
+                withCredentials([string(credentialsId: 'NVD_KEY', variable: 'NVD_API_KEY')]) {
+                    dependencyCheck additionalArguments: "--format HTML --nvdApiKey ${NVD_API_KEY}", odcInstallation: 'DP_Check'
+                }
             }
         }
         stage('Deploy to Minikube') {
