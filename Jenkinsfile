@@ -13,7 +13,6 @@ pipeline {
         DOCKER_TAG = 'latest'
         K8S_CREDENTIALS_ID = 'k8secret'
         K8S_SERVER_URL = 'https://127.0.0.1:62334'
-        NVD_KEY = credentials('NVD_KEY')
     }
     
     stages {
@@ -70,7 +69,9 @@ pipeline {
         }
         stage('OWASP Dependency-Check Vulnerabilities') {
              steps {
-                dependencyCheck additionalArguments: "--format HTML --nvdApiKey ${NVD_API_KEY}", odcInstallation: 'DP_Check'
+                withCredentials([string(credentialsId: 'your-credentials-id', variable: 'NVD_API_KEY')]) {
+                    dependencyCheck additionalArguments: "--format HTML --nvdApiKey ${NVD_API_KEY}", odcInstallation: 'DP_Check'
+                }
             }
         }
         stage('Deploy to Minikube') {
