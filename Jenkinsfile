@@ -67,6 +67,16 @@ pipeline {
                 }
             }
         }
+        stage('SonarQube Scan') {
+            steps {
+                script {
+                    withSonarQubeEnv('SonarServer') {
+                        bat 'npm install sonar-scanner'
+                        bat 'npm run sonar'
+                    }
+                }
+            }
+        }
         stage('Deploy to Minikube') {
             steps {
                 script {
