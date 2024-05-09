@@ -19,7 +19,7 @@ spec:
         - containerPort: 3000
         env:
         - name: BACKEND_URL
-          value: "http://node-api-service:5000"
+          value: "http://node-api-service"
 
 ---
 

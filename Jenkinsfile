@@ -12,7 +12,7 @@ pipeline {
         BACKEND_REPO = 'abdurrafae/chatback'
         DOCKER_TAG = 'latest'
         K8S_CREDENTIALS_ID = 'k8secret'
-        K8S_SERVER_URL = 'https://127.0.0.1:62334'
+        K8S_SERVER_URL = 'https://127.0.0.1:58469'
     }
     
     stages {
