@@ -1,5 +1,5 @@
 provider "kubernetes" {
-    host                   = "https://127.0.0.1:62334"
+    host                   = "https://127.0.0.1:58469"
     client_certificate     = file("C:/Users/ANJUM/.minikube/profiles/minikube/client.crt")
     client_key             = file("C:/Users/ANJUM/.minikube/profiles/minikube/client.key")
     cluster_ca_certificate = file("C:/Users/ANJUM/.minikube/ca.crt")
